@@ -1,3 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var reviewEl = document.getElementById('reviews');
 var returningUserEl = document.getElementById('returning-user');
 var userNameEl = document.getElementById('user');
@@ -37,3 +39,4 @@ function renderUser(isReturning, userName) {
     userNameEl.innerHTML = userName + '!';
 }
 renderUser(user.isReturning, user.userName);
+//# sourceMappingURL=index.js.map
