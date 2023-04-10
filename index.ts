@@ -1,4 +1,4 @@
-import { renderUser, showReviewTotal } from "./utils"
+import { renderUser, showReviewTotal } from "./utils.js"
 
 const reviews: {
     name: string;
@@ -7,22 +7,22 @@ const reviews: {
     date: string 
 }[] = [
     {
-        name: 'Sheia',
+        name: 'Surya',
         stars: 5,
         loyaltyUser: true,
-        date: '01-04-2021'
+        date: '01-04-2023'
     },
     {
-        name: 'Andrzej',
+        name: 'Sumith',
         stars: 3,
         loyaltyUser: false,
-        date: '28-03-2021'
+        date: '28-03-2023'
     },
     {
-        name: 'Omar',
+        name: 'Harshit',
         stars: 4,
         loyaltyUser: true,
-        date: '27-03-2021'
+        date: '27-03-2023'
     },
 ]
 
@@ -37,7 +37,7 @@ const user: {
     lastName: 'Sharma',
     isReturning: true,
     age: 20,
-    stayedAt: ['Shimla', 'Daejeeling', 'Agra']
+    stayedAt: ['Shimla', 'Darjeeling', 'Agra']
 }
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
