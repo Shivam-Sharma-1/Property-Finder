@@ -1,3 +1,5 @@
+export {}
+
 const reviewEl = document.getElementById('reviews') as HTMLInputElement
 
 const reviews = [
