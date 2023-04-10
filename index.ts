@@ -23,8 +23,8 @@ const reviews = [
     },
 ]
 
-function showReviewTotal(value: number) {
-    reviewEl.innerHTML = `review total: ${value.toString()}`
+function showReviewTotal(value: number, reviewer: string) {
+    reviewEl.innerHTML = `review total: ${value.toString()} | last reviewed by ${reviewer}`
 }
 
-showReviewTotal(reviews.length)
+showReviewTotal(reviews.length, reviews[0].name)
