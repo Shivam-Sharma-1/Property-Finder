@@ -19,7 +19,8 @@ var reviews = [
         date: '27-03-2021'
     },
 ];
-function showReviewTotal(value, reviewer) {
-    reviewEl.innerHTML = "review total: ".concat(value.toString(), " | last reviewed by ").concat(reviewer);
+function showReviewTotal(value, reviewer, isLoyalty) {
+    var icon = isLoyalty ? '⭐' : '';
+    reviewEl.innerHTML = "review total: ".concat(value.toString(), " | last reviewed by ").concat(reviewer, " ").concat(icon);
 }
-showReviewTotal(reviews.length, reviews[0].name);
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
