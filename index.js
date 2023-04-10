@@ -1,5 +1,5 @@
-import { showReviewTotal, renderUser } from "./utils.js";
-var reviews = [
+import { renderUser, showReviewTotal } from "./utils.js";
+const reviews = [
     {
         name: 'Sheia',
         stars: 5,
@@ -19,10 +19,12 @@ var reviews = [
         date: '27-03-2021'
     },
 ];
-var user = {
-    userName: 'Shivam',
-    isReturning: true
+const user = {
+    firstName: 'Shivam',
+    lastName: 'Sharma',
+    isReturning: true,
+    age: 20,
+    stayedAt: ['Shimla', 'Daejeeling', 'Agra']
 };
-(0, showReviewTotal)(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
-(0, renderUser)(user.isReturning, user.userName);
-//# sourceMappingURL=index.js.map
+showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
+renderUser(user.isReturning, user.firstName);

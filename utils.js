@@ -1,9 +1,9 @@
-var reviewEl = document.getElementById('reviews');
-var returningUserEl = document.getElementById('returning-user');
-var userNameEl = document.getElementById('user');
+const reviewEl = document.getElementById('reviews');
+const returningUserEl = document.getElementById('returning-user');
+const userNameEl = document.getElementById('user');
 function showReviewTotal(value, reviewer, isLoyalty) {
-    var icon = isLoyalty ? '⭐' : '';
-    reviewEl.innerHTML = "review total: ".concat(value.toString(), " | last reviewed by ").concat(reviewer, " ").concat(icon);
+    const icon = isLoyalty ? '⭐' : '';
+    reviewEl.innerHTML = `review total: ${value.toString()} | last reviewed by ${reviewer} ${icon}`;
 }
 function renderUser(isReturning, userName) {
     if (isReturning) {
@@ -11,5 +11,4 @@ function renderUser(isReturning, userName) {
     }
     userNameEl.innerHTML = userName + '!';
 }
-//# sourceMappingURL=utils.js.map
-export { showReviewTotal, renderUser }
+export { renderUser, showReviewTotal };

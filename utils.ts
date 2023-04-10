@@ -14,4 +14,4 @@ function renderUser(isReturning : boolean, userName: string ) {
     userNameEl.innerHTML = userName + '!'
 }
 
-export { showReviewTotal, renderUser }
+export { renderUser, showReviewTotal }

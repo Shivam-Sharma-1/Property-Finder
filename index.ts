@@ -1,6 +1,11 @@
 import { renderUser, showReviewTotal } from "./utils"
 
-const reviews = [
+const reviews: {
+    name: string;
+    stars: number;
+    loyaltyUser: boolean;
+    date: string 
+}[] = [
     {
         name: 'Sheia',
         stars: 5,
@@ -21,11 +26,20 @@ const reviews = [
     },
 ]
 
-const user = {
-    userName: 'Shivam',
-    isReturning: true
+const user: {
+    firstName: string;
+    lastName: string;
+    isReturning: boolean;
+    age: number;
+    stayedAt: string[]
+} = {
+    firstName: 'Shivam',
+    lastName: 'Sharma',
+    isReturning: true,
+    age: 20,
+    stayedAt: ['Shimla', 'Daejeeling', 'Agra']
 }
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
-renderUser(user.isReturning, user.userName)
+renderUser(user.isReturning, user.firstName)
