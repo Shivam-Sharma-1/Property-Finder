@@ -1,6 +1,5 @@
-const reviewEl = document.getElementById('reviews') as HTMLInputElement
-
-const reviews = [
+var reviewEl = document.getElementById('reviews');
+var reviews = [
     {
         name: 'Sheia',
         stars: 5,
@@ -19,10 +18,8 @@ const reviews = [
         loyaltyUser: true,
         date: '27-03-2021'
     },
-]
-
-function showReviewTotal(value: number) {
-    reviewEl.innerHTML = `review total: ${value.toString()}`
+];
+function showReviewTotal(value) {
+    reviewEl.innerHTML = "review total: ".concat(value.toString());
 }
-
-showReviewTotal(reviews.length)
+showReviewTotal(reviews.length);
