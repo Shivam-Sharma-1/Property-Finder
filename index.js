@@ -1,4 +1,6 @@
 var reviewEl = document.getElementById('reviews');
+var returningUserEl = document.getElementById('returning-user');
+var userNameEl = document.getElementById('user');
 var reviews = [
     {
         name: 'Sheia',
@@ -24,3 +26,14 @@ function showReviewTotal(value, reviewer, isLoyalty) {
     reviewEl.innerHTML = "review total: ".concat(value.toString(), " | last reviewed by ").concat(reviewer, " ").concat(icon);
 }
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
+var user = {
+    userName: 'Shivam',
+    isReturning: true
+};
+function renderUser(isReturning, userName) {
+    if (isReturning) {
+        returningUserEl.innerHTML = 'back';
+    }
+    userNameEl.innerHTML = userName + '!';
+}
+renderUser(user.isReturning, user.userName);
