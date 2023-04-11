@@ -53,3 +53,13 @@ nav .user-container {
     height: 120px;
     object-fit: cover;
 }
+
+footer {
+    width: 100%;
+    background-color: lightskyblue;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    padding: 1.5em;
+    color: white;
+}

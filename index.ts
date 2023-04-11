@@ -114,4 +114,4 @@ properties.forEach((property) => {
 let date = new Date().toJSON();
 let time = date.slice(11, 16)
 let currentLocation: [string, string, number] = ['Bengaluru', time, 27]
-footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°C'
+footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°C`
