@@ -51,4 +51,5 @@ nav .user-container {
 .card img {
     width: 150px;
     height: 120px;
+    object-fit: cover;
 }
