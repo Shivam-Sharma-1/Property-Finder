@@ -1,3 +1,4 @@
+import { LoyaltyUser } from "./enums.js";
 import { renderUser, showReviewTotal } from "./utils.js"
 
 const propertyContainer = document.querySelector('.properties')
@@ -6,25 +7,25 @@ const footer = document.querySelector('footer')
 const reviews: {
     name: string;
     stars: number;
-    loyaltyUser: boolean;
+    loyaltyUser: LoyaltyUser;
     date: string 
 }[] = [
     {
         name: 'Surya',
         stars: 5,
-        loyaltyUser: true,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
         date: '01-04-2023'
     },
     {
         name: 'Sumith',
         stars: 3,
-        loyaltyUser: false,
+        loyaltyUser: LoyaltyUser.BRONZE_USER,
         date: '28-03-2023'
     },
     {
         name: 'Harshit',
         stars: 4,
-        loyaltyUser: true,
+        loyaltyUser: LoyaltyUser.SILVER_USER,
         date: '27-03-2023'
     },
 ]
@@ -53,7 +54,7 @@ const properties : {
         code: number;
         country: string;
     };
-    contact: string;
+    contact: [number, string];
     isAvailable: boolean;
 }[] = [
     {
@@ -66,7 +67,7 @@ const properties : {
             code: 171001,
             country: 'India'
         },
-        contact: 'marywinkle@gmail.com',
+        contact: [+914942310641, 'marywinkle@gmail.com'],
         isAvailable: true  
     },
     {
@@ -79,7 +80,7 @@ const properties : {
             code: 343903,
             country: 'India'
         },
-        contact: 'garydavis@hotmail.com',
+        contact: [+9163000255, 'garydavis@hotmail.com'],
         isAvailable: false 
     },
     {
@@ -92,7 +93,7 @@ const properties : {
             code: 35433,
             country: 'India',
         },
-        contact: 'andyluger@aol.com',
+        contact: [+91995103221, 'andyluger@aol.com'],
         isAvailable: true
     }
 ]
