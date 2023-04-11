@@ -4,12 +4,7 @@ import { renderUser, showReviewTotal } from "./utils.js"
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('footer')
 
-const reviews: {
-    name: string;
-    stars: number;
-    loyaltyUser: LoyaltyUser;
-    date: string 
-}[] = [
+const reviews: any[] = [
     {
         name: 'Surya',
         stars: 5,
@@ -20,7 +15,8 @@ const reviews: {
         name: 'Sumith',
         stars: 3,
         loyaltyUser: LoyaltyUser.BRONZE_USER,
-        date: '28-03-2023'
+        date: '28-03-2023',
+        description: 'Great hosts, location was a bit further than said.'
     },
     {
         name: 'Harshit',
