@@ -1,5 +1,7 @@
 import { renderUser, showReviewTotal } from "./utils.js"
 
+const propertyContainer = document.querySelector('.properties')
+
 const reviews: {
     name: string;
     stars: number;
@@ -97,3 +99,13 @@ const properties : {
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 renderUser(user.isReturning, user.firstName)
+
+properties.forEach((property) => {
+    const card = document.createElement('div')
+    card.classList.add('card')
+    card.innerHTML = property.title
+    const image = document.createElement('img')
+    image.setAttribute('src', property.image)
+    card.appendChild(image)
+    propertyContainer.appendChild(card)
+})
