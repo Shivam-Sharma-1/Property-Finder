@@ -1,6 +1,7 @@
 import { renderUser, showReviewTotal } from "./utils.js"
 
 const propertyContainer = document.querySelector('.properties')
+const footer = document.querySelector('footer')
 
 const reviews: {
     name: string;
@@ -109,3 +110,8 @@ properties.forEach((property) => {
     card.appendChild(image)
     propertyContainer.appendChild(card)
 })
+
+let date = new Date().toJSON();
+let time = date.slice(11, 16)
+let currentLocation: [string, string, number] = ['Bengaluru', time, 27]
+footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°C'
