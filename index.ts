@@ -77,7 +77,7 @@ const properties : {
         location: {
             firstLine: 'no 23',
             city: 'Darjeeling',
-            code: 343903,
+            code: 734101,
             country: 'India'
         },
         contact: [+9163000255, 'garydavis@hotmail.com'],
@@ -90,7 +90,7 @@ const properties : {
         location: {
             firstLine: 'flat 15',
             city: 'Agra',
-            code: 35433,
+            code: 282003,
             country: 'India',
         },
         contact: [+91995103221, 'andyluger@aol.com'],
