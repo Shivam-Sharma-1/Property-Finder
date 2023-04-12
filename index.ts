@@ -1,4 +1,5 @@
 import { LoyaltyUser, Permissions } from "./enums.js";
+import { Properties, User } from "./interfaces.js";
 import { renderUser, showReviewTotal } from "./utils.js"
 
 const propertyContainer = document.querySelector('.properties')
@@ -27,15 +28,6 @@ const reviews: any[] = [
     },
 ]
 
-interface User {
-    firstName: string;
-    lastName: string;
-    permissions: Permissions;
-    isReturning: boolean;
-    age: number;
-    stayedAt: string[]
-}
-
 const user: User = {
     firstName: 'Shivam',
     lastName: 'Sharma',
@@ -43,20 +35,6 @@ const user: User = {
     isReturning: true,
     age: 20,
     stayedAt: ['Shimla', 'Darjeeling', 'Agra']
-}
-
-interface Properties {
-    image: string;
-    title: string;
-    price: number;
-    location: {
-        firstLine: string;
-        city: string;
-        code: number;
-        country: string;
-    };
-    contact: [number, string];
-    isAvailable: boolean;
 }
 
 const properties : Properties[] = [
