@@ -5,7 +5,7 @@ import { getTopTwoReviews, renderUser, showReviewTotal } from "./utils.js"
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('footer')
 const container = document.querySelector('.container')
-const reviewContainer = document.getElementById('reviews')
+const reviewContainer = document.querySelector('.reviews')
 const button = document.querySelector('button')
 let isLoggedIn : boolean
 

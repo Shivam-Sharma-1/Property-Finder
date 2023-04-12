@@ -63,3 +63,36 @@ footer {
     padding: 1.5em;
     color: white;
 }
+
+.review-card {
+    padding: .5em;
+    text-align: center;
+}
+
+.reviews {
+    display: flex;
+    padding: 10px;
+}
+
+.break {
+    height: 1px;
+    width: 90%;
+    background-color: coral;
+    margin-bottom: .5em;
+}
+
+button {
+    padding: .4em 1em;
+    border-radius: 5px;
+    border: 1px solid coral;
+    color: coral;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    background-color: coral;
+    color: white;
+    box-shadow: rgb(0 0 0 / 12%) 0 1px 8px;
+}
