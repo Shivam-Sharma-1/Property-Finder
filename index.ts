@@ -27,14 +27,16 @@ const reviews: any[] = [
     },
 ]
 
-const user: {
+interface User {
     firstName: string;
     lastName: string;
     permissions: Permissions;
     isReturning: boolean;
     age: number;
     stayedAt: string[]
-} = {
+}
+
+const user: User = {
     firstName: 'Shivam',
     lastName: 'Sharma',
     permissions: Permissions.ADMIN,
@@ -43,7 +45,7 @@ const user: {
     stayedAt: ['Shimla', 'Darjeeling', 'Agra']
 }
 
-const properties : {
+interface Properties {
     image: string;
     title: string;
     price: number;
@@ -55,7 +57,9 @@ const properties : {
     };
     contact: [number, string];
     isAvailable: boolean;
-}[] = [
+}
+
+const properties : Properties[] = [
     {
         image: 'images/shimla-property.webp',
         title: 'Shimla Shack',
