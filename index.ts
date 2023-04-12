@@ -102,7 +102,7 @@ showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 renderUser(user.isReturning, user.firstName)
 isLoggedIn = true
 
-function showDetails(authorityStatus: (boolean | Permissions ), element : HTMLDivElement, price: number) {
+function showDetails(authorityStatus: (boolean | Permissions ), element : HTMLDivElement, price: number) : void {
     if (authorityStatus) {
         const priceDisplay = document.createElement('div')
         priceDisplay.innerHTML = price.toString() + '/night'
