@@ -1,4 +1,11 @@
-import { Permissions } from "./enums.js";
+import { LoyaltyUser, Permissions } from "./enums.js";
+
+interface Review {
+    name: string;
+    stars: number;
+    loyaltyUser: LoyaltyUser;
+    date: string;
+}
 
 interface User {
     firstName: string;
@@ -23,4 +30,4 @@ interface Properties {
     isAvailable: boolean;
 }
 
-export { User, Properties }
+export { Review, User, Properties }

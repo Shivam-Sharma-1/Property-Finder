@@ -1,4 +1,5 @@
 import { LoyaltyUser } from "./enums.js"
+import { Review } from "./interfaces.js"
 
 const reviewEl = document.getElementById('reviews') as HTMLInputElement
 const returningUserEl = document.getElementById('returning-user') as HTMLInputElement
@@ -22,4 +23,9 @@ function makeMultiple(value: number) : string {
     } else return ''
 }
 
-export { renderUser, showReviewTotal }
+function getTopTwoReviews(reviews : Review[]) : Review[]  {
+    const sortedReviews = reviews.sort((a, b) => b.stars - a.stars)    
+    return sortedReviews.slice(0,2)
+}
+
+export { renderUser, showReviewTotal, getTopTwoReviews }

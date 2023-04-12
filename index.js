@@ -1,7 +1,10 @@
 import { LoyaltyUser, Permissions } from "./enums.js";
-import { renderUser, showReviewTotal } from "./utils.js";
+import { getTopTwoReviews, renderUser, showReviewTotal } from "./utils.js";
 const propertyContainer = document.querySelector('.properties');
 const footer = document.querySelector('footer');
+const container = document.querySelector('.container');
+const reviewContainer = document.getElementById('reviews');
+const button = document.querySelector('button');
 let isLoggedIn;
 const reviews = [
     {
@@ -15,7 +18,6 @@ const reviews = [
         stars: 3,
         loyaltyUser: LoyaltyUser.BRONZE_USER,
         date: '28-03-2023',
-        description: 'Great hosts, location was a bit further than said.'
     },
     {
         name: 'Harshit',
@@ -90,9 +92,24 @@ properties.forEach((property) => {
     const image = document.createElement('img');
     image.setAttribute('src', property.image);
     card.appendChild(image);
-    propertyContainer.appendChild(card);
     showDetails(user.permissions, card, property.price);
+    propertyContainer.appendChild(card);
 });
+button.addEventListener('click', () => addReviews(reviews));
+let count = 0;
+function addReviews(array) {
+    if (!count) {
+        count++;
+        const topTwo = getTopTwoReviews(array);
+        topTwo.forEach(review => {
+            const card = document.createElement('div');
+            card.classList.add('review-card');
+            card.innerHTML = review.stars + ' stars from ' + review.name;
+            reviewContainer.appendChild(card);
+        });
+        container.removeChild(button);
+    }
+}
 let date = new Date().toJSON();
 let time = date.slice(11, 16);
 let currentLocation = ['Bengaluru', time, 27];

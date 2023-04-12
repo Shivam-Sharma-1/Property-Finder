@@ -1,12 +1,15 @@
 import { LoyaltyUser, Permissions } from "./enums.js";
-import { Properties, User } from "./interfaces.js";
-import { renderUser, showReviewTotal } from "./utils.js"
+import { Properties, Review, User } from "./interfaces.js";
+import { getTopTwoReviews, renderUser, showReviewTotal } from "./utils.js"
 
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('footer')
+const container = document.querySelector('.container')
+const reviewContainer = document.getElementById('reviews')
+const button = document.querySelector('button')
 let isLoggedIn : boolean
 
-const reviews: any[] = [
+const reviews: Review[] = [
     {
         name: 'Surya',
         stars: 5,
@@ -18,7 +21,6 @@ const reviews: any[] = [
         stars: 3,
         loyaltyUser: LoyaltyUser.BRONZE_USER,
         date: '28-03-2023',
-        description: 'Great hosts, location was a bit further than said.'
     },
     {
         name: 'Harshit',
@@ -99,9 +101,25 @@ properties.forEach((property) => {
     const image = document.createElement('img')
     image.setAttribute('src', property.image)
     card.appendChild(image)
-    propertyContainer.appendChild(card)
     showDetails(user.permissions, card, property.price)
+    propertyContainer.appendChild(card)
 })
+
+button.addEventListener('click', () => addReviews(reviews))
+let count = 0
+function addReviews(array: Review[]) : void {
+    if (!count ) {
+        count++
+        const topTwo = getTopTwoReviews(array)
+        topTwo.forEach(review => {
+            const card = document.createElement('div')
+            card.classList.add('review-card')
+            card.innerHTML = review.stars + ' stars from ' + review.name
+            reviewContainer.appendChild(card)
+        })
+        container.removeChild(button) 
+    }
+}
 
 let date = new Date().toJSON();
 let time = date.slice(11, 16)

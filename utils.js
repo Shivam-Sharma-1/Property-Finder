@@ -19,4 +19,8 @@ function makeMultiple(value) {
     else
         return '';
 }
-export { renderUser, showReviewTotal };
+function getTopTwoReviews(reviews) {
+    const sortedReviews = reviews.sort((a, b) => b.stars - a.stars);
+    return sortedReviews.slice(0, 2);
+}
+export { renderUser, showReviewTotal, getTopTwoReviews };
