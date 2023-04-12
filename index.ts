@@ -1,8 +1,9 @@
-import { LoyaltyUser } from "./enums.js";
+import { LoyaltyUser, Permissions } from "./enums.js";
 import { renderUser, showReviewTotal } from "./utils.js"
 
 const propertyContainer = document.querySelector('.properties')
 const footer = document.querySelector('footer')
+let isLoggedIn : boolean
 
 const reviews: any[] = [
     {
@@ -29,12 +30,14 @@ const reviews: any[] = [
 const user: {
     firstName: string;
     lastName: string;
+    permissions: Permissions;
     isReturning: boolean;
     age: number;
     stayedAt: string[]
 } = {
     firstName: 'Shivam',
     lastName: 'Sharma',
+    permissions: Permissions.ADMIN,
     isReturning: true,
     age: 20,
     stayedAt: ['Shimla', 'Darjeeling', 'Agra']
@@ -97,6 +100,15 @@ const properties : {
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 
 renderUser(user.isReturning, user.firstName)
+isLoggedIn = true
+
+function showDetails(authorityStatus: (boolean | Permissions ), element : HTMLDivElement, price: number) {
+    if (authorityStatus) {
+        const priceDisplay = document.createElement('div')
+        priceDisplay.innerHTML = price.toString() + '/night'
+        element.appendChild(priceDisplay)
+    }
+ }
 
 properties.forEach((property) => {
     const card = document.createElement('div')
@@ -106,6 +118,7 @@ properties.forEach((property) => {
     image.setAttribute('src', property.image)
     card.appendChild(image)
     propertyContainer.appendChild(card)
+    showDetails(user.permissions, card, property.price)
 })
 
 let date = new Date().toJSON();
