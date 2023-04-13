@@ -35,6 +35,11 @@ nav .user-container {
     align-items: center;
 }
 
+.main-image img {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
 .properties {
     display: flex;
     flex-wrap: wrap;
