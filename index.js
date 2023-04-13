@@ -1,3 +1,4 @@
+import MainProperty from "./classes.js";
 import { LoyaltyUser, Permissions } from "./enums.js";
 import { getTopTwoReviews, renderUser, showReviewTotal } from "./utils.js";
 const propertyContainer = document.querySelector('.properties');
@@ -122,13 +123,6 @@ function addReviews(array) {
             reviewContainer.appendChild(card);
         });
         container.removeChild(button);
-    }
-}
-class MainProperty {
-    constructor(src, title, reviews) {
-        this.src = src;
-        this.title = title;
-        this.reviews = reviews;
     }
 }
 let yourMainProperty = new MainProperty('images/goa-property.jpg', 'Anjuna', [{
