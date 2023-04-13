@@ -7,6 +7,7 @@ const footer = document.querySelector('footer')
 const container = document.querySelector('.container')
 const reviewContainer = document.querySelector('.reviews')
 const button = document.querySelector('button')
+const mainImageContainer = document.querySelector('.main-image')
 let isLoggedIn : boolean
 
 const reviews: Review[] = [
@@ -120,6 +121,31 @@ function addReviews(array: Review[]) : void {
         container.removeChild(button) 
     }
 }
+
+class MainProperty {
+    src: string
+    title: string
+    reviews: Review[]
+    constructor(src: string, title: string, reviews: Review[]) {
+        this.src = src
+        this.title = title
+        this.reviews = reviews
+    }
+}
+
+let yourMainProperty = new MainProperty(
+    'images/goa-property.jpg', 
+    'Anjuna',
+    [{
+        name: 'Hemanth',
+        stars: 5,
+        loyaltyUser: LoyaltyUser.GOLD_USER,
+        date: '12-04-2023'
+    }] )
+
+const image = document.createElement('img')
+image.setAttribute('src', yourMainProperty.src)
+mainImageContainer.appendChild(image)
 
 let date = new Date().toJSON();
 let time = date.slice(11, 16)
