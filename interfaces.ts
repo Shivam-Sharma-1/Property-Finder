@@ -1,4 +1,5 @@
 import { LoyaltyUser, Permissions } from "./enums.js";
+import { Country, Price } from "./types.js";
 
 interface Review {
     name: string;
@@ -19,12 +20,12 @@ interface User {
 interface Properties {
     image: string;
     title: string;
-    price: number;
+    price: Price;
     location: {
         firstLine: string;
         city: string;
         code: number;
-        country: string;
+        country: Country;
     };
     contact: [number, string];
     isAvailable: boolean;
