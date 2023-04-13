@@ -93,10 +93,13 @@ const properties = [
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser);
 renderUser(user.isReturning, user.firstName);
 isLoggedIn = true;
-function showDetails(authorityStatus, element, price) {
+function showDetails(authorityStatus, element, price, location, contact) {
     if (authorityStatus) {
         const priceDisplay = document.createElement('div');
-        priceDisplay.innerHTML = `₹${price.toString()}k/night`;
+        priceDisplay.innerHTML = `Price: ₹${price.toString()}k/night<br>
+        Location: ${location.firstLine}, ${location.city}-${location.code}, ${location.country}<br>
+        Contact No: ${contact[0]}<br>
+        Contact mail: ${contact[1]}`;
         element.appendChild(priceDisplay);
     }
 }
@@ -107,7 +110,7 @@ properties.forEach((property) => {
     const image = document.createElement('img');
     image.setAttribute('src', property.image);
     card.appendChild(image);
-    showDetails(user.permissions, card, property.price);
+    showDetails(user.permissions, card, property.price, property.location, property.contact);
     propertyContainer.appendChild(card);
 });
 button.addEventListener('click', () => addReviews(reviews));

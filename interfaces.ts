@@ -21,14 +21,16 @@ interface Properties {
     image: string;
     title: string;
     price: Price;
-    location: {
-        firstLine: string;
-        city: string;
-        code: number;
-        country: Country;
-    };
+    location: LocationDetail;
     contact: [number, string];
     isAvailable: boolean;
 }
 
-export { Review, User, Properties }
+interface LocationDetail {
+    firstLine: string;
+    city: string;
+    code: number;
+    country: Country;
+}
+
+export { Review, User, Properties, LocationDetail }

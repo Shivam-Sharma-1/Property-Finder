@@ -1,6 +1,6 @@
 import MainProperty from "./classes.js";
 import { LoyaltyUser, Permissions } from "./enums.js";
-import { Properties, Review, User } from "./interfaces.js";
+import { LocationDetail, Properties, Review, User } from "./interfaces.js";
 import { getTopTwoReviews, renderUser, showReviewTotal } from "./utils.js"
 
 const propertyContainer = document.querySelector('.properties')
@@ -101,10 +101,13 @@ showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
 renderUser(user.isReturning, user.firstName)
 isLoggedIn = true
 
-function showDetails(authorityStatus: (boolean | Permissions ), element : HTMLDivElement, price: number) : void {
+function showDetails(authorityStatus: (boolean | Permissions ), element : HTMLDivElement, price: number, location: LocationDetail, contact: Array<number | string>) : void {
     if (authorityStatus) {
         const priceDisplay = document.createElement('div')
-        priceDisplay.innerHTML = `₹${price.toString()}k/night`
+        priceDisplay.innerHTML = `Price: ₹${price.toString()}k/night<br>
+        Location: ${location.firstLine}, ${location.city}-${location.code}, ${location.country}<br>
+        Contact No: ${contact[0]}<br>
+        Contact mail: ${contact[1]}`
         element.appendChild(priceDisplay)
     }
  }
@@ -116,7 +119,7 @@ properties.forEach((property) => {
     const image = document.createElement('img')
     image.setAttribute('src', property.image)
     card.appendChild(image)
-    showDetails(user.permissions, card, property.price)
+    showDetails(user.permissions, card, property.price, property.location, property.contact)
     propertyContainer.appendChild(card)
 })
 
