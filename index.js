@@ -137,7 +137,11 @@ let yourMainProperty = new MainProperty('images/goa-property.jpg', 'Anjuna', [{
 const image = document.createElement('img');
 image.setAttribute('src', yourMainProperty.src);
 mainImageContainer.appendChild(image);
-let date = new Date().toJSON();
-let time = date.slice(11, 16);
-let currentLocation = ['Bengaluru', time, 27];
+var currentTime = new Date();
+var currentOffset = currentTime.getTimezoneOffset();
+var ISTOffset = 330; // IST offset UTC +5:30 
+var ISTTime = new Date(currentTime.getTime() + (ISTOffset + currentOffset) * 60000);
+var hoursIST = ISTTime.getHours();
+var minutesIST = ISTTime.getMinutes();
+let currentLocation = ['Bengaluru', `${hoursIST}:${minutesIST}`, 27];
 footer.innerHTML = `${currentLocation[0]} ${currentLocation[1]} ${currentLocation[2]}°C`;
