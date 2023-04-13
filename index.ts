@@ -45,7 +45,7 @@ const properties : Properties[] = [
     {
         image: 'images/shimla-property.webp',
         title: 'Shimla Shack',
-        price: 45,
+        price: 40,
         location: {
             firstLine: 'shack 37',
             city: 'Shimla',
@@ -58,7 +58,7 @@ const properties : Properties[] = [
     {
         image: 'images/darjeeling-property.jpg',
         title: 'Darjeeling Cottage',
-        price: 34,
+        price: 51,
         location: {
             firstLine: 'no 23',
             city: 'Darjeeling',
@@ -71,7 +71,7 @@ const properties : Properties[] = [
     {
         image: 'images/agra-property.webp',
         title: 'Agra Flat',
-        price: 23,
+        price: 28,
         location: {
             firstLine: 'flat 15',
             city: 'Agra',
@@ -104,7 +104,7 @@ isLoggedIn = true
 function showDetails(authorityStatus: (boolean | Permissions ), element : HTMLDivElement, price: number) : void {
     if (authorityStatus) {
         const priceDisplay = document.createElement('div')
-        priceDisplay.innerHTML = price.toString() + '/night'
+        priceDisplay.innerHTML = `₹${price.toString()}k/night`
         element.appendChild(priceDisplay)
     }
  }

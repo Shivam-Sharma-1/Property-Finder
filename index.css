@@ -43,6 +43,7 @@ nav .user-container {
 
 .properties {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
