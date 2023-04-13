@@ -79,7 +79,20 @@ const properties : Properties[] = [
         },
         contact: [+91995103221, 'andyluger@aol.com'],
         isAvailable: true
-    }
+    },
+    {
+        image: 'images/bangalore-property.jpg',
+        title: 'Bangalore Shade',
+        price: 35,
+        location: {
+            firstLine: 'Room 4',
+            city: 'Bangalore',
+            code: 560095,
+            country: 'India',
+        },
+        contact: [+919654986498, 'lee34@gmail.com'],
+        isAvailable: false
+    },
 ]
 
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
