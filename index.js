@@ -99,14 +99,14 @@ function showDetails(authorityStatus, element, price, location, contact) {
         priceDisplay.innerHTML = `Price: ₹${price.toString()}k/night<br>
         Location: ${location.firstLine}, ${location.city}-${location.code}, ${location.country}<br>
         Contact No: ${contact[0]}<br>
-        Contact mail: ${contact[1]}`;
+        Contact Mail: ${contact[1]}`;
         element.appendChild(priceDisplay);
     }
 }
 properties.forEach((property) => {
     const card = document.createElement('div');
     card.classList.add('card');
-    card.innerHTML = property.title;
+    card.innerHTML = `<h3>${property.title}</h3>`;
     const image = document.createElement('img');
     image.setAttribute('src', property.image);
     card.appendChild(image);

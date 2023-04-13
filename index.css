@@ -36,6 +36,10 @@ nav .user-container {
     align-items: center;
 }
 
+.container h2 {
+    font-size: 1.3rem;
+}
+
 .main-image img {
     width: 100%;
     margin-bottom: 1em;
@@ -44,22 +48,30 @@ nav .user-container {
 .properties {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
 }
 
 .card {
-    width: 180px;
+    width: 100%;
+    max-width: 280px;
     margin: .5em;
     border-radius: 15px;
     padding: .7em;
     box-shadow: rgb(0 0 0 / 12%) 0 1px 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h3 {
+   font-weight: normal; 
 }
 
 .card img {
     margin-block: .3em;
-    width: 150px;
-    height: 120px;
+    width: 250px;
+    height: 180px;
     object-fit: cover;
+    align-self: center;
 }
 
 footer {
